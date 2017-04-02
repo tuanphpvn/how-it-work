@@ -3714,7 +3714,7 @@
                 return this;
             }
         };
-    });
+    }); /* End foreach */
 
     function createEventHandler(element, events) {
         var eventHandler = function (event, type) {
@@ -4022,7 +4022,7 @@
             }
             return isDefined(value) ? value : this;
         };
-    });
+    }); /* End foreach */
 
     // bind legacy bind/unbind to on/off
     JQLite.prototype.bind = JQLite.prototype.on;
@@ -5080,7 +5080,7 @@
                 }
             };
         }
-    }
+    } /* End createInjector */
 
     createInjector.$$annotate = annotate;
 
@@ -5357,7 +5357,7 @@
 
             return scroll;
         }];
-    }
+    } /* end $AnchorScrollProvider */
 
     var $animateMinErr = minErr('$animate');
     var ELEMENT_NODE = 1;
@@ -5522,7 +5522,7 @@
                     }
                 }
             }];
-    };
+    }; /*$$CoreAnimateQueueProvider*/
 
     /**
      * @ngdoc provider
@@ -6014,7 +6014,7 @@
                 }
             };
         }];
-    }];
+    }]; /*$AnimateProvider*/
 
     var $$AnimateAsyncRunFactoryProvider = /** @this */ function () {
         this.$get = ['$$rAF', function ($$rAF) {
@@ -6045,7 +6045,7 @@
                 };
             };
         }];
-    };
+    }; /*$$AnimateAsyncRunFactoryProvider*/
 
     var $$AnimateRunnerFactoryProvider = /** @this */ function () {
         this.$get = ['$q', '$sniffer', '$$animateAsyncRun', '$$isDocumentHidden', '$timeout',
@@ -6202,7 +6202,7 @@
 
                 return AnimateRunner;
             }];
-    };
+    }; /* $$AnimateRunnerFactoryProvider */
 
     /* exported $CoreAnimateCssProvider */
 
@@ -6276,7 +6276,7 @@
                 }
             };
         }];
-    };
+    }; /* $CoreAnimateCssProvider */
 
     /* global stripHash: true */
 
@@ -6634,7 +6634,7 @@
             return false;
         };
 
-    }
+    } /* Browser */
 
     /** @this */
     function $BrowserProvider() {
@@ -6996,7 +6996,7 @@
 
             return cacheFactory;
         };
-    }
+    } /* $CacheFactoryProvider */
 
     /**
      * @ngdoc service
@@ -10651,7 +10651,7 @@
                     };
                 }
             }];
-    }
+    } /*$CompileProvider*/
 
     function SimpleChange(previous, current) {
         this.previousValue = previous;
@@ -10957,7 +10957,7 @@
                 locals.$scope[identifier] = instance;
             }
         }];
-    }
+    } /*$ControllerProvider*/
 
     /**
      * @ngdoc service
@@ -11221,7 +11221,7 @@
                 }
             };
         };
-    }
+    } /* $HttpParamSerializerJQLikeProvider */
 
     function defaultHttpResponseTransform(data, headers) {
         if (isString(data)) {
@@ -12496,7 +12496,7 @@
                     return url;
                 }
             }];
-    }
+    } /*$HttpProvider*/
 
     /**
      * @ngdoc service
@@ -12705,7 +12705,7 @@
             rawDocument.body.appendChild(script);
             return callback;
         }
-    }
+    } /*createHttpBackend*/
 
     var $interpolateMinErr = angular.$interpolateMinErr = minErr('$interpolate');
     $interpolateMinErr.throwNoconcat = function (text) {
@@ -13093,7 +13093,7 @@
 
             return $interpolate;
         }];
-    }
+    } /*$InterpolateProvider*/
 
     /** @this */
     function $IntervalProvider() {
@@ -13296,7 +13296,7 @@
 
                 return interval;
             }];
-    }
+    } /*$IntervalProvider*/
 
     /**
      * @ngdoc service
@@ -13377,7 +13377,7 @@
                 }
             };
         };
-    };
+    }; /* $jsonpCallbacksProvider */
 
     /**
      * @ngdoc service
@@ -13560,7 +13560,7 @@
             }
             return !!rewrittenUrl;
         };
-    }
+    } /*LocationHtml5Url */
 
 
     /**
@@ -13674,7 +13674,7 @@
             }
             return false;
         };
-    }
+    } /* LocationHashbangUrl */
 
 
     /**
@@ -13726,7 +13726,7 @@
             this.$$urlUpdatedByLocation = true;
         };
 
-    }
+    } /* LocationHashbangInHtml5Url */
 
 
     var locationPrototype = {
@@ -14016,7 +14016,7 @@
             this.$$replace = true;
             return this;
         }
-    };
+    }; /* var locationPrototype*/
 
     forEach([LocationHashbangInHtml5Url, LocationHashbangUrl, LocationHtml5Url], function (Location) {
         Location.prototype = Object.create(locationPrototype);
@@ -14057,7 +14057,7 @@
 
             return this;
         };
-    });
+    }); /* end forEach */
 
 
     function locationGetter(property) {
@@ -14415,7 +14415,7 @@
                         $location.$$state, oldState);
                 }
             }];
-    }
+    } /* $LocationProvider */
 
     /**
      * @ngdoc service
@@ -14590,7 +14590,7 @@
                 };
             }
         }];
-    }
+    } /* $LogProvider */
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      *     Any commits to this file should be reviewed with security in mind.  *
@@ -14861,7 +14861,7 @@
             }
             this.throwError('Unterminated quote', start);
         }
-    };
+    }; /* end Lexer */
 
     var AST = function AST(lexer, options) {
         this.lexer = lexer;
@@ -15209,7 +15209,7 @@
             'this': {type: AST.ThisExpression},
             '$locals': {type: AST.LocalsExpression}
         }
-    };
+    }; /* AST */
 
     function ifDefined(v, d) {
         return typeof v !== 'undefined' ? v : d;
@@ -15341,7 +15341,7 @@
                 ast.toWatch = [];
                 break;
         }
-    }
+    } /* findConstantAndWatchExpressions */
 
     function getInputs(body) {
         if (body.length !== 1) return;
@@ -15850,7 +15850,7 @@
         current: function () {
             return this.state[this.state.computing];
         }
-    };
+    }; /* ASTCompiler */
 
 
     function ASTInterpreter(astBuilder, $filter) {
@@ -16229,7 +16229,7 @@
                 return input(scope, value, locals);
             };
         }
-    };
+    }; /* ASTInterpreter */
 
     /**
      * @constructor
@@ -16578,7 +16578,7 @@
                 return fn;
             }
         }];
-    }
+    } /* $ParseProvider */
 
     /**
      * @ngdoc service
@@ -17260,7 +17260,7 @@
         $Q.race = race;
 
         return $Q;
-    }
+    } /* qFactory */
 
     /** @this */
     function $$RAFProvider() { //rAF
@@ -18694,7 +18694,7 @@
                     }
                 }
             }];
-    }
+    } /* $RootScopeProvider */
 
     /**
      * @ngdoc service
@@ -18780,7 +18780,7 @@
                 return uri;
             };
         };
-    }
+    } /* $$SanitizeUriProvider */
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      *     Any commits to this file should be reviewed with security in mind.  *
@@ -19179,7 +19179,7 @@
                 valueOf: valueOf
             };
         }];
-    }
+    } /* $SceDelegateProvider */
 
 
     /**
@@ -19627,7 +19627,7 @@
              *
              * @param {*} value The value to trustAs.
              * @returns {*} An object that can be passed to {@link ng.$sce#getTrustedHtml
-     *     $sce.getTrustedHtml(value)} to obtain the original value.  (privileged directives
+             *     $sce.getTrustedHtml(value)} to obtain the original value.  (privileged directives
              *     only accept expressions that are either literal constants or are the
              *     return value of {@link ng.$sce#trustAs $sce.trustAs}.)
              */
@@ -19860,7 +19860,7 @@
 
             return sce;
         }];
-    }
+    } /* $SceProvider */
 
     /* exported $SnifferProvider */
 
@@ -20060,7 +20060,7 @@
                 return handleRequestFn;
             }
         ];
-    }
+    } /* $TemplateRequestProvider */
 
     /** @this */
     function $$TestabilityProvider() {
@@ -20176,7 +20176,7 @@
 
                 return testability;
             }];
-    }
+    } /* $$TestabilityProvider */
 
     /** @this */
     function $TimeoutProvider() {
@@ -20273,7 +20273,7 @@
 
                 return timeout;
             }];
-    }
+    } /* $TimeoutProvider */
 
     // NOTE:  The usage of window and document instead of $window and $document here is
     // deliberate.  This service depends on the specific behavior of anchor nodes created by the
@@ -20473,7 +20473,7 @@
             }
             return lastCookies;
         };
-    }
+    } /* $$CookieReader */
 
     $$CookieReader.$inject = ['$document'];
 
@@ -20651,7 +20651,7 @@
         register('number', numberFilter);
         register('orderBy', orderByFilter);
         register('uppercase', uppercaseFilter);
-    }
+    } /*$FilterProvider*/
 
     /**
      * @ngdoc filter
@@ -20823,7 +20823,7 @@
 
             return Array.prototype.filter.call(array, predicateFn);
         };
-    }
+    } /*filterFilter*/
 
 // Helper functions for `filterFilter`
     function createPredicateFn(expression, comparator, anyPropertyKey, matchAgainstAnyProp) {
@@ -20861,7 +20861,7 @@
         };
 
         return predicateFn;
-    }
+    } /*createPredicateFn*/
 
     function deepCompare(actual, expected, comparator, anyPropertyKey, matchAgainstAnyProp, dontMatchWholeObject) {
         var actualType = getTypeForFilter(actual);
@@ -20912,7 +20912,7 @@
             default:
                 return comparator(actual, expected);
         }
-    }
+    } /*deepCompare*/
 
     // Used for easily differentiating between `null` and actual `object`
     function getTypeForFilter(val) {
@@ -21125,7 +21125,7 @@
         }
 
         return {d: digits, e: exponent, i: numberOfIntegerDigits};
-    }
+    } /*parse*/
 
     /**
      * Round the parsed number to the specified number of decimal places
@@ -21186,7 +21186,7 @@
             digits.unshift(carry);
             parsedNumber.i++;
         }
-    }
+    } /*roundNumber*/
 
     /**
      * Format a number into a string
@@ -21272,7 +21272,7 @@
         } else {
             return pattern.posPre + formattedText + pattern.posSuf;
         }
-    }
+    } /*formatNumber*/
 
     function padNumber(num, digits, trim, negWrap) {
         var neg = '';
@@ -21568,7 +21568,7 @@
 
             return text;
         };
-    }
+    } /*dateFilter*/
 
 
     /**
@@ -22465,7 +22465,7 @@
 
             return result;
         }
-    }
+    } /*orderByFilter*/
 
     function ngDirective(directive) {
         if (isFunction(directive)) {
@@ -23224,7 +23224,7 @@
             this.$submitted = true;
             this.$$parentForm.$setSubmitted();
         }
-    };
+    }; /*FormController */
 
     /**
      * @ngdoc method
@@ -23501,7 +23501,7 @@
                 return $parse(expression).assign || noop;
             }
         }];
-    };
+    }; /* formDirectiveFactory */
 
     var formDirective = formDirectiveFactory();
     var ngFormDirective = formDirectiveFactory(true);
@@ -23598,7 +23598,7 @@
             cachedToggleClass(ctrl, VALID_CLASS + validationErrorKey, isValid === true);
             cachedToggleClass(ctrl, INVALID_CLASS + validationErrorKey, isValid === false);
         }
-    }
+    } /*addSetValidityMethod*/
 
     function isObjectEmpty(obj) {
         if (obj) {
@@ -24829,7 +24829,7 @@
         'submit': noop,
         'reset': noop,
         'file': noop
-    };
+    }; /* inputType */
 
     function stringBasedInputType(ctrl) {
         ctrl.$formatters.push(function (value) {
@@ -24950,7 +24950,7 @@
                 element.val(value);
             }
         };
-    }
+    } /* baseInputType */
 
     function weekParser(isoWeek, existingDate) {
         if (isDate(isoWeek)) {
@@ -24982,7 +24982,7 @@
         }
 
         return NaN;
-    }
+    } /* weekParser */
 
     function createDateParser(regexp, mapping) {
         return function (iso, date) {
@@ -25032,7 +25032,7 @@
 
             return NaN;
         };
-    }
+    } /* createDateParser */
 
     function createDateInputType(type, regexp, parseDate, format) {
         return function dynamicDateInputType(scope, element, attr, ctrl, $sniffer, $browser, $filter) {
@@ -25104,7 +25104,7 @@
                 return isDefined(val) && !isDate(val) ? parseDate(val) || undefined : val;
             }
         };
-    }
+    } /* createDateInputType */
 
     function badInputChecker(scope, element, attr, ctrl) {
         var node = element[0];
@@ -25247,7 +25247,7 @@
                 ctrl.$validate();
             });
         }
-    }
+    } /*  numberInputType */
 
     function rangeInputType(scope, element, attr, ctrl, $sniffer, $browser) {
         badInputChecker(scope, element, attr, ctrl);
@@ -25385,7 +25385,7 @@
                 ctrl.$validate();
             }
         }
-    }
+    } /* rangeInputType */
 
     function urlInputType(scope, element, attr, ctrl, $sniffer, $browser) {
         // Note: no badInputChecker here by purpose as `url` is only a validation
@@ -25411,7 +25411,7 @@
             var value = modelValue || viewValue;
             return ctrl.$isEmpty(value) || EMAIL_REGEXP.test(value);
         };
-    }
+    }  /** emailInputType */
 
     function radioInputType(scope, element, attr, ctrl) {
         var doTrim = !attr.ngTrim || trim(attr.ngTrim) !== 'false';
@@ -25442,7 +25442,7 @@
         };
 
         attr.$observe('value', ctrl.$render);
-    }
+    } /*radioInputType*/
 
     function parseConstantExpr($parse, context, name, expression, fallback) {
         var parseFn;
@@ -25485,7 +25485,7 @@
         ctrl.$parsers.push(function (value) {
             return value ? trueValue : falseValue;
         });
-    }
+    } /** checkboxInputType */
 
 
     /**
@@ -25781,7 +25781,7 @@
                 }
             }
         };
-    };
+    }; /** ngValueDirective */
 
     /**
      * @ngdoc directive
@@ -25848,7 +25848,7 @@
                 };
             }
         };
-    }];
+    }]; /** ngBindDirective */
 
 
     /**
@@ -25916,7 +25916,7 @@
                 };
             }
         };
-    }];
+    }]; /** ngBindTemplateDirective */
 
 
     /**
@@ -25988,7 +25988,7 @@
                 };
             }
         };
-    }];
+    }]; /** ngBindHtmlDirective */
 
     /**
      * @ngdoc directive
@@ -26249,7 +26249,7 @@
 
             return flatValue;
         }
-    }
+    } /** classDirective */
 
     /**
      * @ngdoc directive
@@ -27110,7 +27110,7 @@
                 };
             }];
         }
-    );
+    ); /** end forEach */
 
     /**
      * @ngdoc directive
@@ -27644,7 +27644,7 @@
                 });
             }
         };
-    }];
+    }]; /** ngIfDirective */
 
     /**
      * @ngdoc directive
@@ -27920,7 +27920,7 @@
                     };
                 }
             };
-        }];
+        }]; /** ngIncludeDirective */
 
     // This directive is called during the $transclude call of the first `ngInclude` directive.
     // It will replace and compile the content of the element with the loaded template.
@@ -28145,7 +28145,7 @@
                 };
             }
         };
-    };
+    }; /** ngListDirective */
 
     /* global VALID_CLASS: true,
      INVALID_CLASS: true,
@@ -28439,7 +28439,7 @@
 
         setupValidity(this);
         setupModelWatcher(this);
-    }
+    } /** NgModelController */
 
     NgModelController.prototype = {
         $$initGetterSetters: function () {
@@ -29026,7 +29026,7 @@
         $overrideModelOptions: function (options) {
             this.$options = this.$options.createChild(options);
         }
-    };
+    }; /** NgModelController */
 
     function setupModelWatcher(ctrl) {
         // model -> value
@@ -29069,7 +29069,7 @@
 
             return modelValue;
         });
-    }
+    } /** setupModelWatcher */
 
     /**
      * @ngdoc method
@@ -29354,7 +29354,7 @@
                 };
             }
         };
-    }];
+    }]; /** ngModelDirective */
 
     /* exported defaultModelOptions */
     var defaultModelOptions;
@@ -29432,7 +29432,7 @@
 
             return new ModelOptions(options);
         }
-    };
+    };  /** ModelOptions */
 
 
     defaultModelOptions = new ModelOptions({
@@ -30486,7 +30486,7 @@
                 post: ngOptionsPostLink
             }
         };
-    }];
+    }]; /** ngOptionsDirective */
 
     /**
      * @ngdoc directive
@@ -30725,7 +30725,7 @@
                 }
             }
         };
-    }];
+    }]; /** ngPluralizeDirective */
 
     /* exported ngRepeatDirective */
 
@@ -31290,7 +31290,7 @@
                 };
             }
         };
-    }];
+    }]; /** ngRepeatDirective */
 
     var NG_HIDE_CLASS = 'ng-hide';
     var NG_HIDE_IN_PROGRESS_CLASS = 'ng-hide-animate';
@@ -31950,7 +31950,7 @@
                 });
             }
         };
-    }];
+    }]; /** ngSwitchDirective */
 
     var ngSwitchWhenDirective = ngDirective({
         transclude: 'element',
@@ -32208,7 +32208,7 @@
                 };
             }
         };
-    }];
+    }]; /** ngTranscludeDirective */
 
     /**
      * @ngdoc directive
@@ -32564,7 +32564,7 @@
                     }
                 });
             };
-        }];
+        }]; /** SelectController */
 
     /**
      * @ngdoc directive
@@ -32929,12 +32929,12 @@
                 selectCtrl.writeValue(ngModelCtrl.$viewValue);
             };
         }
-    };
+    }; /* selectDirective */
 
 
-// The option directive is purely designed to communicate the existence (or lack of)
-// of dynamically created (and destroyed) option elements to their containing select
-// directive via its controller.
+    // The option directive is purely designed to communicate the existence (or lack of)
+    // of dynamically created (and destroyed) option elements to their containing select
+    // directive via its controller.
     var optionDirective = ['$interpolate', function ($interpolate) {
         return {
             restrict: 'E',
@@ -33333,8 +33333,8 @@
         return;
     }
 
-// try to bind to jquery now so that one can write jqLite(fn)
-// but we will rebind on bootstrap again.
+    // try to bind to jquery now so that one can write jqLite(fn)
+    // but we will rebind on bootstrap again.
     bindJQuery();
 
     publishExternalAPI(angular);
@@ -33488,7 +33488,7 @@
                 return PLURAL_CATEGORY.OTHER;
             }
         });
-    }]);
+    }]); /* angular.module */
 
     jqLite(function () {
         angularInit(window.document, bootstrap);
